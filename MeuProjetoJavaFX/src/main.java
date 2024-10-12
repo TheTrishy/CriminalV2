@@ -5,6 +5,40 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class SQLServerConnection {
+
+    // URL de conexão: jdbc:sqlserver://[HOST]:[PORT];databaseName=[NOME_DO_BANCO];
+    private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=CriminalAPP";
+    private static final String USER = "Anny-APSOO";
+    private static final String PASSWORD = "ufms2024";
+
+    public static void main(String[] args) {
+        Connection connection = null;
+        try {
+            // Estabelecendo a conexão com o banco de dados
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            System.out.println("Conexão estabelecida com sucesso!");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Falha ao conectar com o banco de dados.");
+        } finally {
+            // Fechando a conexão
+            if (connection != null) {
+                try {
+                    connection.close();
+                    System.out.println("Conexão fechada.");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
 
 public class Main extends Application {
     @Override

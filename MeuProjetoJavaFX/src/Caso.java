@@ -1,4 +1,4 @@
-ï»¿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +17,7 @@ namespace CriminalV2.MeuProjetoJavaFX.MeuProjetoJavaFX.MeuProjetoJavaFX.MeuProje
             List<Suspeito> suspeitos = new ArrayList<>();
             String status;
             LocalDate dataAbertura;
-
+            
             public Caso(int numeroCaso, String descricao, Detetive detetiveResponsavel)
             {
                 this.numeroCaso = numeroCaso;
@@ -26,18 +26,17 @@ namespace CriminalV2.MeuProjetoJavaFX.MeuProjetoJavaFX.MeuProjetoJavaFX.MeuProje
                 this.status = "Em andamento";
                 this.dataAbertura = LocalDate.now();
             }
-
             public void adicionarEvidencia(Evidencia evidencia)
             {
                 evidencias.add(evidencia);
             }
-
             public void adicionarSuspeito(Suspeito suspeito)
             {
                 suspeitos.add(suspeito);
             }
-
-            public abstract void gerarRelatorioProgresso();
+            public abstract void gerarRelatorioProgresso()
+            {
+            }
         }
         class Homicidio extends Caso
         {
@@ -48,7 +47,7 @@ namespace CriminalV2.MeuProjetoJavaFX.MeuProjetoJavaFX.MeuProjetoJavaFX.MeuProje
             @Override
             public void gerarRelatorioProgresso()
             {
-            // ImplementaÃ§Ã£o especÃ­fica para HomicÃ­dio
+            // Implementação específica para Homicídio
             }
         }
     }
@@ -62,7 +61,7 @@ namespace CriminalV2.MeuProjetoJavaFX.MeuProjetoJavaFX.MeuProjetoJavaFX.MeuProje
         
         public void gerarRelatorioProgresso()
         {
-          // ImplementaÃ§Ã£o especÃ­fica para Roubo
+          // Implementação específica para Roubo
         }
     }
     class Fraude extends Caso
@@ -75,6 +74,6 @@ namespace CriminalV2.MeuProjetoJavaFX.MeuProjetoJavaFX.MeuProjetoJavaFX.MeuProje
     
     public void gerarRelatorioProgresso()
     {
-    // ImplementaÃ§Ã£o especÃ­fica para Fraude
+    // Implementação específica para Fraude
     }
 }
