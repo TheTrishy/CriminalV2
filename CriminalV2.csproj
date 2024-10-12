@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="MeuProjetoJavaFX\src\CriminalV2.java" />
+    <None Remove="png-transparent-footprint-foot-print-text-monochrome-computer-wallpaper.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="MeuProjetoJavaFX\src\CriminalV2.java" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="png-transparent-footprint-foot-print-text-monochrome-computer-wallpaper.png" />
+  </ItemGroup>
+
+</Project>
